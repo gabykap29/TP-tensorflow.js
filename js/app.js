@@ -6,7 +6,9 @@ const spinner = document.getElementById('spinner');
 const learnLinear = async () => {
     // Crear el modelo secuencial
     const model = tf.sequential();
+    // Agrega una capa densa al modelo con una sola unidad y una entrada de una dimensión
     model.add(tf.layers.dense({units: 1, inputShape: [1]}));
+     // Compila el modelo con la función de pérdida de error cuadrático medio y el optimizador de descenso de gradiente estocástico
     model.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
 
     // Datos de entrenamiento
